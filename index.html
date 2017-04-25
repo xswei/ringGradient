@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ring Gradient</title>
+	<script src="./src/d3.v4.js"></script>
+	<script src="./src/ringGradient.js"></script>
+	<style>
+		svg{
+			border:2px #ccc solid;
+		}
+	</style>
+</head>
+<body>
+	<svg id="svg" width="600" height="600">
+	</svg>
+	<script>
+		var options = {
+			svg:"#svg",
+			cx:300,
+			cy:300,
+			dotStrokeWidth:5
+		}
+		var ring = new d3.RingGradient(options)
+		var t = 0;
+
+		var timer = setInterval(function(){
+			ring.update(t+=0.001);
+			if(t>=1){
+				t=0;
+			}
+		},10)		
+	</script>
+</body>
+</html>
