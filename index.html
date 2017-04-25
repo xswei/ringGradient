@@ -24,7 +24,7 @@
 		var ring = new d3.RingGradient(options)
 		var t = 0;
 
-		var timer = setInterval(function(){
+		d3.timer(function(){
 			ring.update(t+=0.001);
 			if(t>=1){
 				t=0;
