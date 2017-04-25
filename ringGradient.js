@@ -23,7 +23,6 @@
 		this.dotFill = options.dotFill?options.dotFill:"#FFF";
 		this.textFormat = options.textFormat?options.textFormat:d3.format(".1%");
 		this.t = 0;
-		this.flag = false;
 
 		this.init = function(){
 			var defs = this.container.append("defs"),
