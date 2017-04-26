@@ -12,29 +12,37 @@
 	</style>
 </head>
 <body>
-	<svg id="svg" width="600" height="600">
+	<svg id="svg" width="960" height="500">
 	</svg>
 	<script>
-		var rings = [];
-		for(var i=0;i<5;++i){
-			rings.push(new d3.RingGradient({
+		var rings = [],
+			tt = 0,
+			getRandomColor = function(){
+				return '#'+Math.floor(Math.random()*16777215).toString(16); 
+			}
+		for(var i=0;i<3;++i){
+			for(var j=0;j<5;++j){
+				rings.push(new d3.RingGradient({
 					svg:"#svg",
-					cx:100*(i+1),
-					cy:300,
+					cx:160*(j+1),
+					cy:150*(i+1)-50,
 					dotStrokeWidth:5,
-					t:Math.random(),
-					radius:40
-			}))
+					t:tt+=0.04,
+					radius:40,
+					color:d3.scaleSequential(d3.interpolate(getRandomColor(),getRandomColor()))
+				}))
+			}
+			
 		}
 
-		d3.timer(function(){
+		d3.interval(function(){
 			rings.map(function(d){
 				d.update(d.t+=0.001);
 				if(d.t>1){
 					d.t =0;
 				}
 			})
-		},1000)		
+		},17)		
 	</script>
 </body>
 </html>

@@ -1,10 +1,6 @@
 # ringGradient
 SVG环形渐变
 
-### Note
-
-此方法通过引用`svg`的`defs`标签中的`linearGradient`,在同时设置多个环形渐变的时候由于多个渐变同时引用同一个`linearGradient`元素，因此会出现错乱，后续将改进。
-
 
 
 效果图如下
