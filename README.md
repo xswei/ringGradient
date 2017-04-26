@@ -61,6 +61,7 @@ dotRadius | 圆环末端圆半径 | 数值 | 否 | 10
 dotStrokeWidth | 圆环末端圆边宽度 | 数值 | 否 | 3
 dotFill | 圆环末端圆填充色 | CSS颜色字符串 | 否 | "#fff"
 textFormat | 圆环中字体格式 | d3-fotmat | 否 | 12.3%
+t | 初始化值 | 数值，介于[0,1] | 否 | 0
 
 #### 更新
 
