@@ -15,21 +15,26 @@
 	<svg id="svg" width="600" height="600">
 	</svg>
 	<script>
-		var options = {
-			svg:"#svg",
-			cx:300,
-			cy:300,
-			dotStrokeWidth:5
+		var rings = [];
+		for(var i=0;i<5;++i){
+			rings.push(new d3.RingGradient({
+					svg:"#svg",
+					cx:100*(i+1),
+					cy:300,
+					dotStrokeWidth:5,
+					t:Math.random(),
+					radius:40
+			}))
 		}
-		var ring = new d3.RingGradient(options)
-		var t = 0;
 
 		d3.timer(function(){
-			ring.update(t+=0.001);
-			if(t>=1){
-				t=0;
-			}
-		},10)		
+			rings.map(function(d){
+				d.update(d.t+=0.001);
+				if(d.t>1){
+					d.t =0;
+				}
+			})
+		},1000)		
 	</script>
 </body>
 </html>
